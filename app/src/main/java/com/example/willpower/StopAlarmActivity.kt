@@ -31,7 +31,15 @@ class StopAlarmActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_stop_alarm)
 
-        val text= findViewById<TextView>(R.id.alarmLabel)
+        val intent = getIntent()
+
+        // Retrieve the time information from the intent extras
+        val alarmTime = intent.getStringExtra("ALARM_TIME")
+
+        // Display the alarm time in your UI
+        val alarmTimeTextView= findViewById<TextView>(R.id.alarmLabel)
+        alarmTimeTextView.text = "Alarm Time: $alarmTime"
+
 
 
         playRingtone()

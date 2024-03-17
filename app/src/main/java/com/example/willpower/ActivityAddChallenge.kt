@@ -43,8 +43,7 @@ class ActivityAddChallenge : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_challenge)
         alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        alarmIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
-        val intent = Intent(this, AlarmReceiver::class.java)
+
 
         alarmHelper = AlarmHelper(this)
         dbHelper = DatabaseHelper(this)
@@ -56,27 +55,31 @@ class ActivityAddChallenge : AppCompatActivity() {
         val buttonDeleteChallenge = findViewById<Button>(R.id.buttonDeleteChallenge)
         val btnTimePicker = findViewById<ImageView>(R.id.btnTimePicker)
 
-        val challengeJson = intent.getStringExtra("challengeJson")
-        val challengeType = object : TypeToken<Challenge>() {}.type
-        val gson = Gson()
-        val challengeObj = gson.fromJson<Challenge>(challengeJson, challengeType)
+//        val challengeJson = intent.getStringExtra("challengeJson")
+//        val challengeType = object : TypeToken<Challenge>() {}.type
+//        val gson = Gson()
+//        val challengeObj = gson.fromJson<Challenge>(challengeJson, challengeType)
         // Check if there's an incoming challenge ID
 
-        Log.d("JSON",""+challengeJson)
+//        Log.d("JSON",""+challengeJson)
 
-        //val challengeId = intent.getLongExtra("challengeId", -1)
-        if (challengeObj != null) {
-            // Code Added
-            val editChalenge = findViewById<EditText>(R.id.editTextChallenge)
-            editChalenge.setText(challengeObj.challenge)
-            val editBenifits = findViewById<EditText>(R.id.editTextBenefits)
-            editBenifits.setText(challengeObj.benefits)
-            val switch = findViewById<Switch>(R.id.toggleAlarmSwitch)
-            if (challengeObj.alarmEnabled == 1) {
-                switch.isChecked = true
-            }
-        }
-        val challengeId = challengeObj.id
+        val challengeId = intent.getLongExtra("challengeId", -1)
+       //val id=intent.getLongExtra("challengeId",-1)
+
+        alarmIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+        val intent = Intent(this, AlarmReceiver::class.java)
+//        if (challengeObj != null) {
+//            // Code Added
+//            val editChalenge = findViewById<EditText>(R.id.editTextChallenge)
+//            editChalenge.setText(challengeObj.challenge)
+//            val editBenifits = findViewById<EditText>(R.id.editTextBenefits)
+//            editBenifits.setText(challengeObj.benefits)
+//            val switch = findViewById<Switch>(R.id.toggleAlarmSwitch)
+//            if (challengeObj.alarmEnabled == 1) {
+//                switch.isChecked = true
+//            }
+//        }
+//        val challengeId = challengeObj.id
         Log.d("ChallengeID", "" + challengeId)
         Toast.makeText(this, "" + challengeId, Toast.LENGTH_SHORT).show()
         if (challengeId != -1L) {

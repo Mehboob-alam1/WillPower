@@ -62,24 +62,24 @@ class ChallengeAdapter(private var challenges: List<Challenge>, private val dbHe
             Toast.makeText(holder.itemView.context, "" +challenge.id, Toast.LENGTH_SHORT).show()
 
         }
-//        holder.editIcon.setOnClickListener {
-//            val context = holder.itemView.context
-//            val updateIntent = Intent(context, ActivityAddChallenge::class.java).apply {
-//                putExtra("challengeId", challenge.id)
-//            }
-//            context.startActivity(updateIntent)
-//        }
-
         holder.editIcon.setOnClickListener {
             val context = holder.itemView.context
-            val gson = Gson()
-            val challengeJson = gson.toJson(challenge)
-
             val updateIntent = Intent(context, ActivityAddChallenge::class.java).apply {
-                putExtra("challengeJson", challengeJson)
+                putExtra("challengeId", challenge.id)
             }
             context.startActivity(updateIntent)
         }
+//
+//        holder.editIcon.setOnClickListener {
+//            val context = holder.itemView.context
+//            val gson = Gson()
+//            val challengeJson = gson.toJson(challenge)
+//
+//            val updateIntent = Intent(context, ActivityAddChallenge::class.java).apply {
+//                putExtra("challengeJson", challengeJson)
+//            }
+//            context.startActivity(updateIntent)
+//        }
 
         holder.completitionStar.setOnClickListener {
             val currentDate = getCurrentDate()
