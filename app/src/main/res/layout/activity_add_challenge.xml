@@ -1,0 +1,63 @@
+<!-- activity_add_challenge.xml -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/editTextChallenge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Challenge"/>
+
+    <EditText
+        android:id="@+id/editTextBenefits"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Benefits"/>
+
+    <Button
+        android:id="@+id/buttonCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"/>
+
+    <Button
+        android:id="@+id/buttonUpdateChallenge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update Challenge"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/buttonDeleteChallenge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete Challenge"
+        android:visibility="gone"/>
+
+    <!-- Toggle button to enable/disable the alarm -->
+    <Switch
+        android:id="@+id/toggleAlarmSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enable Alarm"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Image button for modifying the alarm's date and time -->
+    <ImageButton
+        android:id="@+id/btnTimePicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_lock_idle_alarm"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/buttonAddChallenge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Challenge"/>
+
+</LinearLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".StopAlarmActivity">
+
+<TextView
+    android:id="@+id/alarmLabel"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Alarm Time: 07:00 AM"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_marginTop="32dp"
+    android:textSize="24sp"
+    android:textStyle="bold" />
+
+<Button
+    android:id="@+id/snoozeButton"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:text="Snooze"
+    app:layout_constraintTop_toBottomOf="@id/alarmLabel"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.5"
+    app:layout_constraintVertical_bias="0.5"
+    android:layout_margin="16dp" />
+
+<Button
+    android:id="@+id/stopButton"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:text="Stop Alarm"
+    app:layout_constraintTop_toBottomOf="@id/snoozeButton"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.5"
+    android:layout_margin="16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

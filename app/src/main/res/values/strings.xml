@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">WillPower</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dialog_title">Dialog Title</string>
+    <string name="dialog_text_view_1">Dialog text view 1</string>
+    <string name="dialog_text_view_2">Dialog text view 2</string>
+    <string name="dialog_text_view_3">Dialog text view 3</string>
+    <string name="accept">Accept</string>
+    <string name="cancel">Cancel</string>
+</resources>

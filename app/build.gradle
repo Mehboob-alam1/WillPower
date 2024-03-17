@@ -1,0 +1,71 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.example.willpower'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.willpower"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "willPower_1.0.12"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        /*
+        TODO:
+            * Add alarmId to the data base without breaking the app. Done
+            * Ask user to enable permissions. Done for Notifications. DOES ALRMCLOCK NEEDS???
+            * The Nofitication is not trigered when the phone is sleeping, try with "setAlarmClock()"
+
+        VERSION HISTORY
+        1.0.12  Start StopAlarmActivity on alarm manager.
+        1.0.11  alarnID to database, timePicket, Start ringtone at specific time by the user.
+        1.0.10  Display a confirmation dialog on create and delete challenge.
+        1.0.9   Display a random 'motivational' message on star icon click.
+        1.0.8   Display a random "start task message" every day at 1 AM; Play sound on star click.
+        1.0.7   Progress Bar added to completitionStar.setOnClickListener
+        1.0.6   Add lastUpdateDate to the database and updateChallengeDayCount(,,) on completitionStar.setOnClickListener
+        1.0.5   Delete challenge on button click.
+        1.0.4   Update challenge on button click.
+        1.0.3   Read/Populate the challenge form on editIcon click.
+        1.0.2   ID added to the Challenge.kt
+        1.0.1   Create/Add a challenge to the SQLite. Load the challenge list Desc on main.
+         */
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    //Default
+    //implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    //implementation 'com.google.android.material:material:1.8.0'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    //My dependencies
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation "androidx.work:work-runtime-ktx:2.9.0"
+    implementation 'com.google.code.gson:gson:2.8.8'
+
+}
